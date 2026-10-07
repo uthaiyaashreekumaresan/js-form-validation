@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== Animated Background Particles ===== -->
+<div class="particles" id="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+</div>
+
+<!-- ===== Hero Header Section ===== -->
+<header class="hero-header">
+    <div class="container text-center">
+        <h1 class="hero-title animate-fade-down">
+            <i class="fas fa-shield-alt me-3"></i>Form Validation
+        </h1>
+        <p class="hero-subtitle animate-fade-up">Secure & smart form with real-time validation — ensuring accurate data with every submission.</p>
+        <div class="header-divider animate-scale-in"></div>
+    </div>
+</header>
+
+<!-- ===== Main Form Section ===== -->
+<section class="form-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-9">
+                <div class="form-card animate-slide-up">
+                    
+                    <!-- Form Header -->
+                    <div class="form-card-header text-center">
+                        <div class="form-icon-wrapper">
+                            <i class="fas fa-user-edit"></i>
+                        </div>
+                        <h2 class="form-title">Contact Information</h2>
+                        <p class="form-description">Please fill in all the required fields marked with <span class="text-danger">*</span></p>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form id="contactForm" novalidate>
+                        <div class="row g-4">
+
+                            <!-- 1. First Name -->
+                            <div class="col-md-6">
+                                <div class="form-floating-custom animate-field" style="--delay: 0.1s">
+                                    <label for="firstName"><i class="fas fa-user me-2"></i>First Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control custom-input" id="firstName" placeholder="Enter your first name" required>
+                                    <div class="invalid-feedback" id="firstNameError"></div>
+                                    <div class="valid-feedback"><i class="fas fa-check-circle"></i> Looks good!</div>
+                                </div>
+                            </div>
+
+                            <!-- 2. Last Name -->
+                            <div class="col-md-6">
+                                <div class="form-floating-custom animate-field" style="--delay: 0.15s">
+                                    <label for="lastName"><i class="fas fa-user me-2"></i>Last Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control custom-input" id="lastName" placeholder="Enter your last name" required>
+                                    <div class="invalid-feedback" id="lastNameError"></div>
+                                    <div class="valid-feedback"><i class="fas fa-check-circle"></i> Looks good!</div>
+                                </div>
+                            </div>
+
+                            <!-- 3. Email -->
+                            <div class="col-md-6">
+                                <div class="form-floating-custom animate-field" style="--delay: 0.2s">
+                                    <label for="email"><i class="fas fa-envelope me-2"></i>Email Address <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control custom-input" id="email" placeholder="example@mail.com" required>
+                                    <div class="invalid-feedback" id="emailError"></div>
+                                    <div class="valid-feedback"><i class="fas fa-check-circle"></i> Valid email!</div>
+                                </div>
+                            </div>
+
+                            <!-- 4. Phone Number -->
+                            <div class="col-md-6">
+                                <div class="form-floating-custom animate-field" style="--delay: 0.25s">
+                                    <label for="phone"><i class="fas fa-phone-alt me-2"></i>Phone Number <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text phone-prefix">+91</span>
+                                        <input type="tel" class="form-control custom-input phone-input" id="phone" placeholder="9876543210" maxlength="10" required>
+                                    </div>
+                                    <div class="invalid-feedback" id="phoneError"></div>
+                                    <div class="valid-feedback"><i class="fas fa-check-circle"></i> Valid number!</div>
+                                </div>
+                            </div>
+
+                            <!-- 5. Date of Birth -->
+                            <div class="col-md-6">
+                                <div class="form-floating-custom animate-field" style="--delay: 0.3s">
+                                    <label for="dob"><i class="fas fa-calendar-alt me-2"></i>Date of Birth <span class="text-danger">*</span></label>
+                                    <input type="date" class="form-control custom-input" id="dob" required>
+                                    <div class="invalid-feedback" id="dobError"></div>
+                                    <div class="valid-feedback"><i class="fas fa-check-circle"></i> Looks good!</div>
+                                </div>
+                            </div>
+
+                            <!-- 6. Gender -->
+                            <div class="col-md-6">
+                                <div class="form-floating-custom animate-field" style="--delay: 0.35s">
+                                    <label for="gender"><i class="fas fa-venus-mars me-2"></i>Gender <span class="text-danger">*</span></label>
+                                    <select class="form-select custom-input" id="gender" required>
+                                        <option value="" disabled selected>Select your gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="invalid-feedback" id="genderError"></div>
+                                    <div class="valid-feedback"><i class="fas fa-check-circle"></i> Selected!</div>
+                                </div>
+                            </div>
+
+                            <!-- 7. Father's Name -->
+                            <div class="col-md-6">
+                                <div class="form-floating-custom animate-field" style="--delay: 0.4s">
+                                    <label for="fatherName"><i class="fas fa-user-tie me-2"></i>Father's Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control custom-input" id="fatherName" placeholder="Enter father's name" required>
+                                    <div class="invalid-feedback" id="fatherNameError"></div>
+                                    <div class="valid-feedback"><i class="fas fa-check-circle"></i> Looks good!</div>
+                                </div>
+                            </div>
+
+                            <!-- 8. Qualification -->
+                            <div class="col-md-6">
+                                <div class="form-floating-custom animate-field" style="--delay: 0.45s">
+                                    <label for="qualification"><i class="fas fa-graduation-cap me-2"></i>Qualification <span class="text-danger">*</span></label>
+                                    <select class="form-select custom-input" id="qualification" required>
+                                        <option value="" disabled selected>Select qualification</option>
+                                        <option value="10th">10th / SSLC</option>
+                                        <option value="12th">12th / HSC</option>
+                                        <option value="diploma">Diploma</option>
+                                        <option value="ug">Under Graduate (UG)</option>
+                                        <option value="pg">Post Graduate (PG)</option>
+                                        <option value="phd">Ph.D</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="invalid-feedback" id="qualificationError"></div>
+                                    <div class="valid-feedback"><i class="fas fa-check-circle"></i> Selected!</div>
+                                </div>
+                            </div>
+
+                            <!-- 9. College / Institution -->
+                            <div class="col-md-6">
+                                <div class="form-floating-custom animate-field" style="--delay: 0.5s">
+                                    <label for="college"><i class="fas fa-university me-2"></i>College / Institution <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control custom-input" id="college" placeholder="Enter your college name" required>
+                                    <div class="invalid-feedback" id="collegeError"></div>
+                                    <div class="valid-feedback"><i class="fas fa-check-circle"></i> Looks good!</div>
+                                </div>
+                            </div>
+
+                            <!-- 10. Course Interested -->
+                            <div class="col-md-6">
+                                <div class="form-floating-custom animate-field" style="--delay: 0.55s">
+                                    <label for="course"><i class="fas fa-book-open me-2"></i>Course Interested <span class="text-danger">*</span></label>
+                                    <select class="form-select custom-input" id="course" required>
+                                        <option value="" disabled selected>Select a course</option>
+                                        <option value="fullstack">Full Stack Development</option>
+                                        <option value="frontend">Frontend Development</option>
+                                        <option value="backend">Backend Development</option>
+                                        <option value="python">Python Programming</option>
+                                        <option value="datascience">Data Science & AI</option>
+                                        <option value="cybersecurity">Cyber Security</option>
+                                        <option value="uiux">UI/UX Design</option>
+                                        <option value="digitalmarketing">Digital Marketing</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="invalid-feedback" id="courseError"></div>
+                                    <div class="valid-feedback"><i class="fas fa-check-circle"></i> Selected!</div>
+                                </div>
+                            </div>
+
+                            <!-- 11. Address -->
+                            <div class="col-12">
+                                <div class="form-floating-custom animate-field" style="--delay: 0.6s">
+                                    <label for="address"><i class="fas fa-map-marker-alt me-2"></i>Address <span class="text-danger">*</span></label>
+                                    <textarea class="form-control custom-input" id="address" placeholder="Enter your full address" rows="3" style="height: 100px; border-radius: 20px;" required></textarea>
+                                    <div class="invalid-feedback" id="addressError"></div>
+                                    <div class="valid-feedback"><i class="fas fa-check-circle"></i> Looks good!</div>
+                                </div>
+                            </div>
+
+                            <!-- 12. City -->
+                            <div class="col-md-4">
+                                <div class="form-floating-custom animate-field" style="--delay: 0.65s">
+                                    <label for="city"><i class="fas fa-city me-2"></i>City <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control custom-input" id="city" placeholder="Enter your city" required>
+                                    <div class="invalid-feedback" id="cityError"></div>
+                                    <div class="valid-feedback"><i class="fas fa-check-circle"></i> Looks good!</div>
+                                </div>
+                            </div>
+
+                            <!-- 13. State -->
+                            <div class="col-md-4">
+                                <div class="form-floating-custom animate-field" style="--delay: 0.7s">
+                                    <label for="state"><i class="fas fa-map me-2"></i>State <span class="text-danger">*</span></label>
+                                    <select class="form-select custom-input" id="state" required>
+                                        <option value="" disabled selected>Select state</option>
+                                        <option value="AN">Andaman and Nicobar Islands</option>
+                                        <option value="AP">Andhra Pradesh</option>
+                                        <option value="AR">Arunachal Pradesh</option>
+                                        <option value="AS">Assam</option>
+                                        <option value="BR">Bihar</option>
+                                        <option value="CH">Chandigarh</option>
+                                        <option value="CT">Chhattisgarh</option>
+                                        <option value="DL">Delhi</option>
+                                        <option value="GA">Goa</option>
+                                        <option value="GJ">Gujarat</option>
+                                        <option value="HR">Haryana</option>
+                                        <option value="HP">Himachal Pradesh</option>
+                                        <option value="JK">Jammu and Kashmir</option>
+                                        <option value="JH">Jharkhand</option>
+                                        <option value="KA">Karnataka</option>
+                                        <option value="KL">Kerala</option>
+                                        <option value="MP">Madhya Pradesh</option>
+                                        <option value="MH">Maharashtra</option>
+                                        <option value="MN">Manipur</option>
+                                        <option value="ML">Meghalaya</option>
+                                        <option value="MZ">Mizoram</option>
+                                        <option value="NL">Nagaland</option>
+                                        <option value="OR">Odisha</option>
+                                        <option value="PB">Punjab</option>
+                                        <option value="RJ">Rajasthan</option>
+                                        <option value="SK">Sikkim</option>
+                                        <option value="TN">Tamil Nadu</option>
+                                        <option value="TG">Telangana</option>
+                                        <option value="TR">Tripura</option>
+                                        <option value="UP">Uttar Pradesh</option>
+                                        <option value="UK">Uttarakhand</option>
+                                        <option value="WB">West Bengal</option>
+                                    </select>
+                                    <div class="invalid-feedback" id="stateError"></div>
+                                    <div class="valid-feedback"><i class="fas fa-check-circle"></i> Selected!</div>
+                                </div>
+                            </div>
+
+                            <!-- 14. Pincode -->
+                            <div class="col-md-4">
+                                <div class="form-floating-custom animate-field" style="--delay: 0.75s">
+                                    <label for="pincode"><i class="fas fa-thumbtack me-2"></i>Pincode <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control custom-input" id="pincode" placeholder="Enter pincode" maxlength="6" required>
+                                    <div class="invalid-feedback" id="pincodeError"></div>
+                                    <div class="valid-feedback"><i class="fas fa-check-circle"></i> Valid pincode!</div>
+                                </div>
+                            </div>
+
+                            <!-- 15. Message -->
+                            <div class="col-12">
+                                <div class="form-floating-custom animate-field" style="--delay: 0.8s">
+                                    <label for="message"><i class="fas fa-comment-dots me-2"></i>Your Message <span class="text-danger">*</span></label>
+                                    <textarea class="form-control custom-input" id="message" placeholder="Type your message here..." rows="4" style="height: 130px; border-radius: 20px;" required></textarea>
+                                    <div class="invalid-feedback" id="messageError"></div>
+                                    <div class="valid-feedback"><i class="fas fa-check-circle"></i> Looks good!</div>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn btn-submit-custom w-100 py-3 fw-bold" id="submitBtn">
+                                    <span class="btn-text">
+                                        <i class="fas fa-paper-plane me-2"></i>Submit Application
+                                    </span>
+                                    <span class="btn-loader d-none">
+                                        <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+                                        Submitting...
+                                    </span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Success Modal ===== -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content success-modal-content">
+            <div class="modal-body text-center p-5">
+                <div class="success-checkmark">
+                    <div class="check-icon">
+                        <span class="icon-line line-tip"></span>
+                        <span class="icon-line line-long"></span>
+                        <div class="icon-circle"></div>
+                        <div class="icon-fix"></div>
+                    </div>
+                </div>
+                <h3 class="mt-4 fw-bold" style="color: var(--primary);">Submitted Successfully!</h3>
+                <p class="text-muted mt-2">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                <button type="button" class="btn btn-submit-custom mt-3 px-5 py-2" data-bs-dismiss="modal">
+                    <i class="fas fa-check me-2"></i>Done
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== Footer ===== -->
+<footer class="footer-section">
+    <div class="container text-center">
+        <p class="mb-0">&copy; 2026 Professional Contact Form. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="script.js"></script>
+</body>
+</html>
